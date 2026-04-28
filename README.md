@@ -80,13 +80,25 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+Hosted on Cloudflare Pages. Every push to `main` triggers an automatic redeploy.
+
+To deploy manually:
+
+```bash
+npm install -g wrangler
+npm run build
+wrangler pages deploy dist --project-name options-greek-viz
+```
+
 ## Tech Stack
 
 - **React 18** - UI framework
 - **TypeScript** - Type-safe code
 - **Recharts** - Interactive charts
 - **Tailwind CSS** - Styling
-- **Vite** - Fast build tool
+- **Vite 8** - Fast build tool
 
 ## Project Structure
 
