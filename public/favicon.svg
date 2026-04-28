@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#0f172a"/>
+  <line x1="16" y1="3" x2="16" y2="29" stroke="#1e293b" stroke-width="1"/>
+  <line x1="3" y1="16" x2="29" y2="16" stroke="#1e293b" stroke-width="1"/>
+  <text x="8" y="12" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle" dominant-baseline="middle">Δ</text>
+  <text x="24" y="12" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle" dominant-baseline="middle">Γ</text>
+  <text x="8" y="24" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle" dominant-baseline="middle">θ</text>
+  <text x="24" y="24" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle" dominant-baseline="middle">ν</text>
+</svg>
