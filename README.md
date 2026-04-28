@@ -147,7 +147,7 @@ src/
       OptionTypeToggle.tsx   # Call/put toggle
       InfoTooltip.tsx        # Hover tooltip icon for parameter labels
     charts/
-      SurfaceCanvas3D.tsx    # Canvas isometric 3D surface renderer (painter's algorithm)
+      SurfaceCanvas3D.tsx    # Canvas 3D surface: rotation, zoom, hover tooltip, floor shadow, diffuse shading, params marker
       GreekGridChart.tsx     # All Greeks grid (click to zoom into Profile)
       GreekProfileChart.tsx  # Single-Greek line chart, P&L overlay, baseline
       MultiGreekChart.tsx    # All Greeks normalized and overlaid, baseline
@@ -178,4 +178,4 @@ src/
 - On Profile or Multi, click **Pin baseline** before adjusting params to compare before/after curves side-by-side
 - On Profile, enable **P&L overlay** to see the option's break-even profile alongside the Greek curve
 - On Strategy, change strike/expiry inputs directly in the table, or load a preset and edit from there
-- The 3D toggle on Heatmap and Vol Surface uses WebGL — drag to rotate, scroll to zoom
+- The 3D toggle on Heatmap and Vol Surface renders via Canvas 2D (no WebGL) — drag to rotate, scroll or pinch to zoom, hover for exact values, click **↺ reset** to restore the default view
