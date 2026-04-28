@@ -45,7 +45,7 @@ export const SidebarControls: React.FC<SidebarControlsProps> = ({ params, onPara
 
   return (
     <div className="w-80 bg-slate-900 border-r border-slate-700 p-5 flex flex-col h-screen overflow-hidden">
-      <h1 className="text-xl font-bold text-slate-100 mb-3">Options Greeks</h1>
+      <h1 className="text-xl font-bold text-slate-100 mb-3">Options Greeks Explorer</h1>
 
       <div className="mb-3">
         <div className="flex justify-between items-baseline mb-2">
