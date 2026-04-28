@@ -1,0 +1,2 @@
+- [T units convention (days vs years)](project_t_units_convention.md) — UI stores T in days, BS lib expects years; conversion happens at the call boundary.
+- [Black-Scholes implementation locations](reference_bs_files.md) — files that hold BS math and every call site that must convert T.
