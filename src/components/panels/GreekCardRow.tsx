@@ -11,7 +11,7 @@ interface GreekCardRowProps {
 
 export const GreekCardRow: React.FC<GreekCardRowProps> = ({ greekValues, params, onParamsChange }) => {
   return (
-    <div className="flex gap-4 px-6 py-4 bg-slate-900 border-b border-slate-700">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 px-3 py-3 md:px-6 md:py-4 bg-slate-900 border-b border-slate-700">
       {(['delta', 'gamma', 'theta', 'vega', 'rho'] as const).map((key) => (
         <GreekCard
           key={key}

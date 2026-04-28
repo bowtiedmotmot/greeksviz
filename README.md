@@ -15,6 +15,9 @@ This is a React-based visualization tool for options traders, quants, and anyone
 - **Heatmap**: 2D surface of a Greek across spot price and time to expiry
 - **Radar**: Sensitivity pentagon showing relative magnitude of all Greeks
 
+**Responsive Layout**
+Works on desktop, tablet, and mobile. On narrow screens the sidebar collapses — tap the hamburger menu in the top bar to open it as a drawer. The Greek card row, chart grid, and chart padding all adapt to available width.
+
 **Parameter Controls**
 A full sidebar with sliders for:
 - Spot price (S) and strike price (K)
@@ -113,7 +116,7 @@ src/
     greekMeta.ts             # Metadata (names, colors, descriptions)
   components/
     layout/
-      AppShell.tsx           # Two-column layout
+      AppShell.tsx           # Responsive layout (drawer on mobile, sidebar on desktop)
       SidebarControls.tsx    # Parameter sliders and Greek inverter
     controls/
       ParamSlider.tsx        # Reusable labeled slider with tooltip support

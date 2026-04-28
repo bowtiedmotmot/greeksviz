@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ParamSlider } from '../controls/ParamSlider';
 import { OptionTypeToggle } from '../controls/OptionTypeToggle';
 import { InfoTooltip } from '../controls/InfoTooltip';
 import { BSEquation } from '../panels/BSEquation';
+import { InfoModal } from './InfoModal';
 import { Params } from '../../hooks/useGreeks';
 
 interface SidebarControlsProps {
@@ -20,6 +21,8 @@ const DEFAULT_PARAMS: Params = {
 };
 
 export const SidebarControls: React.FC<SidebarControlsProps> = ({ params, onParamsChange }) => {
+  const [showInfo, setShowInfo] = useState(false);
+
   const updateParam = <K extends keyof Params>(key: K, value: Params[K]) => {
     onParamsChange({ ...params, [key]: value });
   };
@@ -45,7 +48,17 @@ export const SidebarControls: React.FC<SidebarControlsProps> = ({ params, onPara
 
   return (
     <div className="w-80 bg-slate-900 border-r border-slate-700 p-5 flex flex-col h-screen overflow-hidden">
-      <h1 className="text-xl font-bold text-slate-100 mb-3">Options Greeks Explorer</h1>
+      {showInfo && <InfoModal onClose={() => setShowInfo(false)} />}
+      <div className="flex items-center justify-between mb-3">
+        <h1 className="text-xl font-bold text-slate-100">Options Greeks Explorer</h1>
+        <button
+          onClick={() => setShowInfo(true)}
+          className="w-6 h-6 rounded-full border border-slate-600 text-slate-400 hover:text-slate-100 hover:border-slate-400 transition-colors text-xs font-bold flex items-center justify-center flex-shrink-0"
+          title="About this app"
+        >
+          ?
+        </button>
+      </div>
 
       <div className="mb-3">
         <div className="flex justify-between items-baseline mb-2">

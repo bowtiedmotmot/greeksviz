@@ -117,14 +117,14 @@ export const GreekCard: React.FC<GreekCardProps> = ({
   const valueColor = value === 0 ? 'text-slate-400' : value > 0 ? 'text-green-400' : 'text-red-400';
 
   return (
-    <div className={`bg-slate-800 border rounded-lg p-4 flex-1 flex flex-col gap-2 transition-colors ${error ? 'border-orange-500' : 'border-slate-700'}`}>
+    <div className={`bg-slate-800 border rounded-lg p-3 md:p-4 flex flex-col gap-2 transition-colors ${error ? 'border-orange-500' : 'border-slate-700'}`}>
       <div className="flex items-center gap-2">
         <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: greek.color }} />
         <span className="text-sm font-semibold text-slate-200">{greek.name}</span>
         <span className="text-xs text-slate-500">{greek.symbol}</span>
       </div>
 
-      <div className={`text-2xl font-bold ${valueColor}`}>
+      <div className={`text-lg md:text-2xl font-bold ${valueColor}`}>
         {value > 0 ? '+' : ''}{formatValue(value)}
       </div>
 

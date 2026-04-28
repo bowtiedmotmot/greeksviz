@@ -84,6 +84,8 @@ export const GreekProfileChart: React.FC<GreekProfileChartProps> = ({
               borderRadius: '8px'
             }}
             labelStyle={{ color: '#e2e8f0' }}
+            labelFormatter={(v) => `S: $${Number(v).toFixed(2)}`}
+            formatter={(v: number) => [v.toFixed(4), greek.name]}
           />
           <ReferenceLine
             x={currentS}

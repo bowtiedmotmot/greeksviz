@@ -83,6 +83,8 @@ export const MultiGreekChart: React.FC<MultiGreekChartProps> = ({ data }) => {
               borderRadius: '8px'
             }}
             labelStyle={{ color: '#e2e8f0' }}
+            labelFormatter={(v) => `S: $${Number(v).toFixed(2)}`}
+            formatter={(v: number, name: string) => [v.toFixed(4), name]}
           />
           <Legend onClick={handleLegendClick} wrapperStyle={{ cursor: 'pointer' }} />
 

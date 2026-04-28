@@ -79,8 +79,8 @@ function App() {
         <div className="flex flex-col h-full overflow-hidden">
           <GreekCardRow greekValues={greekValues} params={params} onParamsChange={setParams} />
 
-          <div className="flex-1 flex flex-col overflow-hidden p-6 gap-6 bg-slate-950">
-            <div className="flex gap-2 bg-slate-800 p-2 rounded-lg w-fit">
+          <div className="flex-1 flex flex-col overflow-hidden p-3 md:p-6 gap-3 md:gap-6 bg-slate-950">
+            <div className="flex gap-1 md:gap-2 bg-slate-800 p-1.5 md:p-2 rounded-lg flex-wrap">
               {[
                 { key: 'grid', label: 'All Greeks' },
                 { key: 'profile', label: 'Profile' },

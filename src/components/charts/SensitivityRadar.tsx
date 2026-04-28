@@ -64,7 +64,7 @@ export const SensitivityRadar: React.FC<SensitivityRadarProps> = ({ greekValues,
       <h2 className="text-lg font-bold text-slate-100 mb-4">Greeks Sensitivity Radar</h2>
 
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart data={radarData} margin={{ top: 20, right: 80, bottom: 20, left: 80 }}>
+        <RadarChart data={radarData} margin={{ top: 10, right: 30, bottom: 20, left: 30 }}>
           <PolarGrid stroke="#475569" />
           <PolarAngleAxis
             dataKey="name"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GREEK_META, GREEK_KEYS } from '../../constants/greekMeta';
 
 interface HeatmapData {
@@ -20,6 +20,18 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
   selectedGreek,
   onGreekSelect
 }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const obs = new ResizeObserver(([entry]) => setContainerWidth(entry.contentRect.width));
+    obs.observe(el);
+    setContainerWidth(el.getBoundingClientRect().width);
+    return () => obs.disconnect();
+  }, []);
+
   const greekData = data[selectedGreek];
   const greek = GREEK_META[selectedGreek as keyof typeof GREEK_META];
 
@@ -54,10 +66,9 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
     }
   };
 
-  const cellSize = Math.min(
-    Math.floor((window.innerWidth - 350) / spotPrices.length),
-    80
-  );
+  const cellSize = containerWidth > 0
+    ? Math.min(Math.floor((containerWidth - 60) / spotPrices.length), 80)
+    : 40;
 
   return (
     <div className="flex-1 flex flex-col bg-slate-900 p-6 rounded-lg border border-slate-700 overflow-auto">
@@ -92,7 +103,7 @@ export const HeatmapChart: React.FC<HeatmapChartProps> = ({
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto" ref={scrollRef}>
         <div className="inline-block">
           {/* Header row with spot prices */}
           <div className="flex">

@@ -22,7 +22,7 @@ export const GreekGridChart: React.FC<GreekGridChartProps> = ({ data, currentS, 
   return (
     <div className="flex-1 flex flex-col bg-slate-900 p-4 rounded-lg border border-slate-700 overflow-auto">
       <h2 className="text-lg font-bold text-slate-100 mb-4">All Greek Profiles</h2>
-      <div className="grid grid-cols-3 gap-4 flex-1" style={{ gridAutoRows: '1fr' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1" style={{ gridAutoRows: '1fr' }}>
         {GREEK_KEYS.map((key) => {
           const greek = GREEK_META[key];
           const seriesData = data[key as keyof GreekSeries];
