@@ -27,7 +27,7 @@ export const AppShell: React.FC<AppShellProps> = ({ sidebar, main }) => {
         {sidebar}
       </div>
 
-      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
+      <div className="flex-1 flex flex-col overflow-y-auto md:overflow-hidden min-w-0">
         <div className="flex items-center gap-3 px-4 py-3 bg-slate-900 border-b border-slate-700 md:hidden">
           <button
             onClick={() => setSidebarOpen(true)}

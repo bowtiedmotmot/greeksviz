@@ -60,6 +60,12 @@ export const ExplainerPanel: React.FC<ExplainerPanelProps> = ({
       return 'The radar chart shows all five Greeks on a normalized scale [0, 1], comparing the call and put at your current parameters. Notice how some Greeks diverge between calls and puts (delta, rho) while others remain the same (gamma, vega). This reveals the mathematical structure of option pricing.';
     }
 
+    if (chartType === 'volsurface') {
+      return 'The vol surface shows how implied volatility varies across strikes and expiries using a parametric smile model (σ_ATM × (1 + α·ln²(K/S))). A flat surface means Black-Scholes holds perfectly; a curved surface reflects real-world skew and term structure. Drag the α slider to steepen or flatten the smile. Switch to 3D for a surface view.';
+    }
+    if (chartType === 'strategy') {
+      return 'Build multi-leg strategies by selecting calls and puts with different strikes and expiries. The P&L chart shows the aggregate profit and loss at expiry across all spot prices. Vertical dashed lines mark each leg\'s strike. Use the preset buttons to load common structures like straddles, spreads, and condors. The Greeks table shows the net sensitivity of your entire position right now.';
+    }
     return 'Adjust the parameters on the left to explore how each Greek changes. Click the chart tabs to switch between different visualization modes. Each Greek measures a different sensitivity — together, they capture all the ways option values move.';
   };
 

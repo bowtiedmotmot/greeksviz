@@ -60,7 +60,7 @@ export const SensitivityRadar: React.FC<SensitivityRadarProps> = ({ greekValues,
   ];
 
   return (
-    <div className="flex-1 flex flex-col bg-slate-900 p-6 rounded-lg border border-slate-700">
+    <div className="flex-1 flex flex-col bg-slate-900 p-4 md:p-6 rounded-lg border border-slate-700 min-h-[350px] md:min-h-0">
       <h2 className="text-lg font-bold text-slate-100 mb-4">Greeks Sensitivity Radar</h2>
 
       <ResponsiveContainer width="100%" height="100%">

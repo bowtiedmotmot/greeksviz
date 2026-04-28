@@ -20,7 +20,7 @@ interface GreekGridChartProps {
 
 export const GreekGridChart: React.FC<GreekGridChartProps> = ({ data, currentS, onGreekSelect }) => {
   return (
-    <div className="flex-1 flex flex-col bg-slate-900 p-4 rounded-lg border border-slate-700 overflow-auto">
+    <div className="flex-1 flex flex-col bg-slate-900 p-4 rounded-lg border border-slate-700 overflow-auto min-h-[520px] md:min-h-0">
       <h2 className="text-lg font-bold text-slate-100 mb-4">All Greek Profiles</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-1" style={{ gridAutoRows: '1fr' }}>
         {GREEK_KEYS.map((key) => {
@@ -64,7 +64,7 @@ export const GreekGridChart: React.FC<GreekGridChartProps> = ({ data, currentS, 
                         fontSize: 11
                       }}
                       labelStyle={{ color: '#e2e8f0' }}
-                      labelFormatter={(v) => `S: $${Number(v).toFixed(2)}`}
+                      labelFormatter={(v) => `Spot Price: $${Number(v).toFixed(2)}`}
                       formatter={(v: number) => [v.toFixed(4), greek.name]}
                     />
                     <ReferenceLine
