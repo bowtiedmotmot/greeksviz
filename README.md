@@ -1,4 +1,4 @@
-# Options Greeks Visualization
+# Options Greeks Explorer
 
 An interactive web application for exploring how options Greeks—the key sensitivities in options pricing—interact with each other and respond to market conditions.
 
